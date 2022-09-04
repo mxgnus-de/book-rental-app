@@ -1,0 +1,108 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+   provider        = "prisma-client-js"
+   previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+   provider = "mysql"
+   url      = env("DATABASE_URL")
+}
+
+enum BookGenre {
+   comic
+   crime
+   fantasy
+   romance
+   horror
+   adventure
+   action
+}
+
+model User {
+   userId                String                  @id @unique @default(cuid())
+   createdAt             DateTime                @default(value: now())
+   surname               String
+   lastname              String
+   username              String                  @unique
+   email                 String                  @unique
+   password              String
+   birthday              DateTime
+   permissions           String                  @default(value: "USER")
+   isVerified            Boolean                 @default(value: false)
+   session               Session[]
+   rentedBook            RentedBook[]
+   favoriteBooks         FavoriteBooks[]
+   userVerification      UserVerification?
+   UserVerificationReset UserVerificationResend?
+
+   @@index([userId, email])
+}
+
+model UserVerification {
+   userId           String   @id @unique
+   createdAt        DateTime @default(value: now())
+   verificationCode String   @unique @db.VarChar(256)
+   user             User     @relation(fields: [userId], references: [userId])
+}
+
+model UserVerificationResend {
+   userId     String   @id @unique
+   resendCode String   @unique @db.VarChar(256)
+   createdAt  DateTime @default(value: now())
+   user       User     @relation(fields: [userId], references: [userId])
+}
+
+model Session {
+   sessionId String   @id @unique
+   userId    String
+   createdAt DateTime @default(value: now())
+   ip        String?
+   user      User     @relation(fields: [userId], references: [userId])
+
+   @@index([sessionId, userId])
+}
+
+model Book {
+   bookId        String          @id @unique @default(cuid())
+   name          String          @unique
+   author        String
+   description   String?         @db.Text
+   genre         BookGenre
+   rentedBook    RentedBook?
+   favoriteBooks FavoriteBooks[]
+   cover         String
+   publishedAt   DateTime
+   isbn          String
+   createdAt     DateTime        @default(value: now())
+
+   @@index([name, bookId, author, genre, isbn])
+   @@fulltext([description])
+}
+
+model RentedBook {
+   userId     String
+   bookId     String    @unique
+   rentedAt   DateTime  @default(value: now())
+   returnedAt DateTime?
+   isRented   Boolean   @default(value: true)
+
+   user User @relation(fields: [userId], references: [userId])
+   book Book @relation(fields: [bookId], references: [bookId])
+
+   @@index([userId, bookId])
+}
+
+model FavoriteBooks {
+   id        String   @id @unique @default(cuid())
+   userId    String
+   bookId    String
+   createdAt DateTime @default(value: now())
+
+   user User @relation(fields: [userId], references: [userId])
+   book Book @relation(fields: [bookId], references: [bookId])
+
+   @@index([userId, bookId])
+}
