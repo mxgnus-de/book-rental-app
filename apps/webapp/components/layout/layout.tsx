@@ -12,7 +12,9 @@ function Layout({ children }: LayoutProps) {
 	return (
 		<>
 			<Navbar />
-			<Container justifyContent="flex-start">{children}</Container>
+			<Container justifyContent="flex-start" as="main">
+				{children}
+			</Container>
 			<Footer />
 		</>
 	);

@@ -8,10 +8,7 @@ export function Footer() {
 	return (
 		<Wrapper>
 			<RightFooter>
-				<p>
-					Danke an <Link href="https://github.com/mainclasss">Nils</Link>{' '}
-					für das Website Design :D
-				</p>
+				<p>Danke an Nils für das Website Design :)</p>
 				<Socials>
 					<Link href="https://github.com/mainclasss">
 						<FontAwesomeIcon icon={faGithub} size="lg" />
@@ -29,7 +26,7 @@ export function Footer() {
 				<p>
 					Es handelt sich dabei um das Thema
 					Datenbanken/Datenbankenstruktur (SQL) wobei eine Bibliothek
-					wiedergespiegelt wird.
+					widergespiegelt wird.
 				</p>
 				<p
 					style={{
@@ -37,8 +34,7 @@ export function Footer() {
 					}}
 				>
 					An diesem Projekt haben folgende Leute mitgewirkt: Max, Bent,
-					Mathilda und{' '}
-					<Link href="https://github.com/mxgnus-de">Magnus</Link>
+					Mathilda und Magnus
 				</p>
 				<p
 					style={{
@@ -69,6 +65,16 @@ const Wrapper = styled.div`
 	align-items: center;
 	flex-direction: row;
 	margin-top: 2rem;
+	gap: 2rem;
+
+	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+		flex-direction: column-reverse;
+		padding: 2rem 3rem;
+	}
+
+	@media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+		padding: 2rem 1rem;
+	}
 `;
 
 const RightFooter = styled.div`
@@ -84,6 +90,10 @@ const RightFooter = styled.div`
 	p,
 	a {
 		font-size: 14px;
+	}
+
+	@media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+		gap: 20px;
 	}
 `;
 

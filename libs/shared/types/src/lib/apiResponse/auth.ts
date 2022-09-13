@@ -15,6 +15,7 @@ export type LoginApiResponse = ApiResponse<
 	| {
 			success: false;
 			isVerified?: false;
+			isDeactivated?: true;
 			email?: string;
 			resendCode?: string;
 	  }

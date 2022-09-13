@@ -2,6 +2,7 @@ import { useNotifications, useSearch } from '@book-rental-app/shared/stores';
 import {
 	Book,
 	Container,
+	Meta,
 	SubHeadline,
 	WrappedLoadingSpinner,
 } from '@book-rental-app/shared/ui-components';
@@ -72,34 +73,37 @@ const SearchPage: NextPage = () => {
 	}, [search]);
 
 	return (
-		<Container marginTop="2rem" justifyContent="flex-start">
-			<SubHeadline>Suchen</SubHeadline>
-			<SearchWrapper>
-				<SearchInputWrapper>
-					<SearchInput
-						type="text"
-						placeholder="Suchen"
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
-						onKeyDown={handleKeydown}
-					/>
-				</SearchInputWrapper>
-				<button onClick={executeSearch}>
-					<SearchRoundedIcon />
-				</button>
-			</SearchWrapper>
-			{isLoading ? (
-				<WrappedLoadingSpinner />
-			) : searchResults.length ? (
-				<SearchResultsWrapper>
-					{searchResults.map((book) => (
-						<Book book={book} isHovered={false} key={book.bookId} />
-					))}
-				</SearchResultsWrapper>
-			) : (
-				<p>Keine Ergebnisse gefunden</p>
-			)}
-		</Container>
+		<>
+			<Meta title="Suche" />
+			<Container marginTop="2rem" justifyContent="flex-start">
+				<SubHeadline>Suchen</SubHeadline>
+				<SearchWrapper>
+					<SearchInputWrapper>
+						<SearchInput
+							type="text"
+							placeholder="Suchen"
+							value={search}
+							onChange={(e) => setSearch(e.target.value)}
+							onKeyDown={handleKeydown}
+						/>
+					</SearchInputWrapper>
+					<button onClick={executeSearch}>
+						<SearchRoundedIcon />
+					</button>
+				</SearchWrapper>
+				{isLoading ? (
+					<WrappedLoadingSpinner />
+				) : searchResults.length ? (
+					<SearchResultsWrapper>
+						{searchResults.map((book) => (
+							<Book book={book} isHovered={false} key={book.bookId} />
+						))}
+					</SearchResultsWrapper>
+				) : (
+					<p>Keine Ergebnisse gefunden</p>
+				)}
+			</Container>
+		</>
 	);
 };
 

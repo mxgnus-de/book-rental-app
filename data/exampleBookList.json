@@ -1,173 +1,173 @@
 [
-	{
-		"name": "Harry Potter und der Stein der Weisen",
-		"author": "J.K. Rowling",
-		"genre": "fantasy",
-		"cover": "https://medien.umbreitkatalog.de/bildzentrale_original/978/355/131/7254.jpg",
-		"publishedAt": "26.7.1997",
-		"description": "„Harry Potter und der Stein der Weisen“ ist der erste Band der Harry Potter Reihe. Es handelt von einem Jungen der bei seiner Tante, Onkel und Cousin auf gewachsen ist. Als Harry 11 Jahre alt wurde erfuhr er, dass er von Zauberern abstammt und selbst einer ist. Er soll nach Hogwarts (einer Zauberer Schule) gehen.",
-		"isbn": "3551551677"
-	},
-	{
-		"name": "Harry Potter und der Gefangene von Askaban",
-		"author": "J.K. Rowling",
-		"genre": "fantasy",
-		"cover": "https://m.media-amazon.com/images/I/51KF7EPwhoL.jpg",
-		"publishedAt": "3.6.2004",
-		"description": "Zu Beginn des dritten Schuljahrs in Hogwarts erfährt Harry Potter, warum er straffrei ausging: Sirius Black, der Gefangene von Askaban, ist entwichen, und es wird befürchtet, dass er auf der Suche nach Harry Potter ist. Deshalb bewachen die grausigen Dementoren aus Askaban das Internat.",
-		"isbn": "3551551693"
-	},
-	{
-		"name": "Harry Potter und der Orden des Phönix",
-		"author": "J.K. Rowling",
-		"genre": "fantasy",
-		"cover": "https://s3.sky.ch/img/moviecover/ch/images/17d/20423d.jpg",
-		"publishedAt": "21.6.2003",
-		"description": "Der Phönixorden ist eine bereits mehrere Jahre bestehende Organisation, die Hogwarts Schulleiter Albus Dumbledore gegründet hatte, um Lord Voldemort und seine Anhänger organisiert zu bekämpfen. Ebendieser Bund wurde erneut ins Leben gerufen, nachdem Harry im vorherigen Schuljahr Voldemorts Rückkehr miterlebt hat.",
-		"isbn": "3551555559"
-	},
-	{
-		"name": "Harry Potter und die Kammer des Schreckens",
-		"author": "J.K. Rowling",
-		"genre": "fantasy",
-		"cover": "https://img1.od-cdn.com/ImageType-100/3450-1/%7B7E28E53E-D4E7-43BF-BA8F-50A46B24F45B%7DIMG100.jpg",
-		"publishedAt": " 2.7.1998",
-		"description": "Harry Potter und der Orden",
-		"isbn": "3551551685"
-	},
-	{
-		"name": "Beautiful Disaster",
-		"author": "Jamie McGuire",
-		"genre": "romance",
-		"cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783492303347_1492436739950_xxl.jpg",
-		"description": "Im ersten Band der Maddox-Brüder Reihe \"Beautiful Disaster\" geht es um die beiden Studenten Abby und Travis, die sich aufgrund einer verlorenen Wette näher kommen. Doch Abby sträubt sich vehement gegen ihre Gefühle für den Bad Boy und wendet sich dem Traum aller Schwiegermütter, Parker, zu. Wird Travis es schaffen, Abbys Herz zu erobern oder wird ihr Geheimnis den beiden im Wege stehen? Das schöne Cover verspricht nicht zu viel, denn Jamie McGuire gelingt es mit diesem Roman eine wunderbare Liebesgeschichte mit dunklen Geheimnissen zu erzählen.",
-		"publishedAt": "16.04.2013",
-		"isbn": "9783492303347"
-	},
-	{
-		"name": "Wenn du mich siehst",
-		"author": "Nicholas Sparks",
-		"genre": "romance",
-		"cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783453268760_1516146579000_xxl.jpg",
-		"description": "Nicholas Sparks ist aus den Bücherregalen nicht mehr wegzudenken und seit seine Romane regelmäßig verfilmt werden, ist er weltweit berühmt. \"Wenn du mich siehst\" ist seine neuste Erscheinung und wieder einmal weiß er ganz genau, was Frauenherzen berührt und uns zum dahinschmelzen bringt. Als die Rechtsanwältin Maria eine Reifenpanne hat, ist ihre einzige Hilfe ein bedrohlich wirkender Kerl, muskelbepackt und mit blau geschwollenem Gesicht. Der MMA-Kämpfer Colin ist gerade auf Bewährung und kann sich keinen Fehler erlauben, doch die aufkeimende Liebe zwischen Maria und ihm bringt beide immer mehr in Schwierigkeiten.",
-		"publishedAt": "08.03.2016",
-		"isbn": "9783453268760"
-	},
-	{
-		"name": "Für immer vielleicht",
-		"author": "Cecelia Ahern",
-		"genre": "romance",
-		"cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783596511051_1510310229000_xxl.jpg",
-		"description": "Rosie und Alex sind beste Freunde seit Kindertagen und im Laufe ihrer gemeinsamen Zeit entwickeln sich auf beiden Seiten Gefühle. Das Schicksal legt den beiden jedoch immer wieder Steine in den Weg, sei es ein Umzug oder ein unerwartetes Kind. \"Für immer vielleicht\" ist ein Roman, der den Leser mitfiebern lässt, teilweise traurig über die Gefühllosigkeit des Schicksals macht, aber gleichzeitig auch sehr hoffnungsvoll ist. Wer die Bücher von Cecelia Ahern mag, dem wird die Geschichte, die lediglich mittels Briefen, E-Mails und Chat-Logs erzählt wird, sehr gut gefallen.",
-		"publishedAt": "01.03.2006",
-		"isbn": "9783828978362"
-	},
-	{
-		"name": "Léon und Louise",
-		"author": "Alex Capus",
-		"genre": "romance",
-		"cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783423141284_1645017935000_xxl.jpg",
-		"description": "In einer Zeit, die überschattet wird von den grausamen Ereignissen im Ersten Weltkrieg, ist Liebe oft das Einzige, was den Menschen Hoffnung auf Besserung schenkt. Als Léon Louise auf ihrem Fahrrad sieht, ist es für ihn Liebe auf den ersten Blick, doch ihnen sind nur 24 gemeinsame Stunden vergönnt, bis ein Bombenangriff die beiden voneinander trennt. Sowohl Léon als auch Louise sind davon überzeugt, dass der andere tot ist - bis sie sich zehn Jahre später in Paris wieder begegnen. Der gebürtige Franzose Alex Capus versteht sein Handwerk und entführt uns mit seinen historischen Romanen in die Vergangenheit.",
-		"publishedAt": "07.02.2011",
-		"isbn": "9783446236301"
-	},
-	{
-		"name": "Die zwei Leben der Alice Pendelbury",
-		"author": "Marc Levy",
-		"genre": "romance",
-		"cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783442380282_1533679470000_xxl.jpg",
-		"description": "Alice Pendelbury wird von einer Hellseherin prophezeit, dass gerade der wichtigste Mensch in ihrem zukünftigen Leben hinter ihr vorbeigegangen ist. Die Suche nach ihm gestaltet sich jedoch schwierig, muss Alice doch erst sechs bestimmten Personen begegnen, bis sie das neue Leben, das angeblich auf sie wartet, beginnen kann. Die junge Engländerin begibt sich kurzerhand mit ihrem Nachbarn auf eine spannende Reise. Marc Levys' erster Roman \"Solange du da bist\" wurde bereits ein Riesenerfolg und der Autor beweist immer wieder aufs Neue, dass er ein Händchen für wunderbare Liebesromane hat.",
-		"publishedAt": "28.05.2013",
-		"isbn": "9783764504441"
-	},
-	{
-		"name": "Pokémon Adventures, Band 1",
-		"author": "Hidenori Kusaka",
-		"genre": "comic",
-		"description": "",
-		"publishedAt": "1.3.2001",
-		"cover": "https://www.pokewiki.de/images/thumb/5/56/Pok%C3%A9Spe_Panini_Bd01.png/250px-Pok%C3%A9Spe_Panini_Bd01.png",
-		"isbn": "9783898851954"
-	},
-	{
-		"name": "Band 2 (Pocket Monsters SPECIAL)",
-		"author": "Hidenori Kusaka",
-		"genre": "comic",
-		"description": "",
-		"publishedAt": "1.6.2001",
-		"cover": "https://www.pokewiki.de/images/thumb/7/74/Pok%C3%A9Spe_Panini_Bd02.png/250px-Pok%C3%A9Spe_Panini_Bd02.png",
-		"isbn": "9783898851954"
-	},
-	{
-		"name": "Band 3 (Pocket Monsters SPECIAL)",
-		"author": "Hidenori Kusaka",
-		"genre": "comic",
-		"description": "",
-		"publishedAt": "1.9.2001",
-		"cover": "https://www.pokewiki.de/images/thumb/f/f5/Pok%C3%A9Spe_Panini_Bd03.jpg/250px-Pok%C3%A9Spe_Panini_Bd03.jpg",
-		"isbn": "9783898851954"
-	},
-	{
-		"name": "Sherlock Holmes",
-		"author": "Arthur Conan Doyle",
-		"genre": "crime",
-		"description": "Sherlock Holmes ist der Inbegriff des scharfsinnigen Gentleman-Detektivs: Wenn er mit seinem Freund Dr. Watson ein wenig kombiniert, ist selbst der kniffligste Fall schon so gut wie gelöst. Die Welt des Sherlock Holmes ist eine Sammlung von Geschichten ganz unterschiedlicher Länge, an denen Arthur Conan Doyle zeitlebens geschrieben hat. Vier seiner Fälle wuchsen zu Romanform an, sie versammelt dieser zum Schmökern einladende Band: 'Eine Studie in Scharlachrot', 'Das Zeichen der Vier', 'Der Hund der Baskervilles' und 'Das Tal des Grauens'.",
-		"publishedAt": "31.7.2013",
-		"cover": "https://m.media-amazon.com/images/I/51kjk79ygyL.jpg",
-		"isbn": "9783730600306"
-	},
-	{
-		"name": "Sherlock Holmes - Das Zeichen der Vier",
-		"author": "Arthur Conan Doyle",
-		"genre": "crime",
-		"description": "Sherlock Holmes und Dr. Watson sollen Miss Mary Morstan bei der Suche nach ihrem verschollenen Vater helfen. Dieser war Offizier in Indien und verschwand bei seiner Rückkehr nach England. Ein anonymer Brief bringt sie auf die Spur von Thaddeus Sholto, dessen Vater mit dem Gesuchten in derselben Kompanie gedient hat. Thaddeus berichtet von einem Schatz, den die beiden Männer mit aus Indien brachten, der aber seinem Bruder das Leben kostete und anschließend verschwand.",
-		"publishedAt": "1.2.1890",
-		"cover": "https://bilder.buecher.de/produkte/43/43540/43540707z.jpg",
-		"isbn": "9783596035663"
-	},
-	{
-		"name": "Babylon Berlin - Moabit",
-		"author": "Volker Kutscher, Kat Menschik",
-		"genre": "crime",
-		"description": "",
-		"publishedAt": "5.8.2017",
-		"cover": "https://covers.openlibrary.org/b/id/10135424-M.jpg",
-		"isbn": "9783869711553"
-	},
-	{
-		"name": "Babylon Berlin - Der stumme Tod",
-		"author": "Volker Kutscher",
-		"genre": "crime",
-		"description": "",
-		"publishedAt": "4.5.2020",
-		"cover": "https://covers.openlibrary.org/b/id/11576185-M.jpg",
-		"isbn": "9783869711553"
-	},
-	{
-		"name": "Die drei ??? Das Gespensterschloss ",
-		"author": "Christopher Tauber",
-		"genre": "action",
-		"description": "Ein ganz besonderer Leckerbissen für alle Liebhaber der Klassiker-Ära: \"Die drei ??? und das Gespensterschloss\", einer der All-Time-Favourites der Kultreihe, entfaltet als Graphic Novel einen unwiderstehlichen Reiz. Ines Korth übersetzt die spannende Story um ein Schloss, in dem es spukt, und einen eigenartigen Stummfilmstar in atmosphärisch starke Bilder – ganz im Retro-Stil der 1960er-Jahre. Ein Muss für Fans!",
-		"publishedAt": "2022",
-		"cover": "https://cdn.smehost.net/hcmssmeappscom-delabelsprod/produkte/buecher/das-gespensterschloss.png",
-		"isbn": "783440170915"
-	},
-	{
-		"name": "Die drei ??? Der weiße Leopard",
-		"author": "Kosmos",
-		"genre": "action",
-		"description": "Kein Einbrecher dieser Welt kann den „weißen Leopard\" stehlen. Ein unüberwindbares Sicherheitssystem sollte den edlen Schatz schützen. Doch die Schale aus dem 17. Jahrhundert ist verschwunden. Ein brisanter Fall für die drei ???, denn auf der Schale liegt ein Fluch der Samurai. Wer den „weißen Leopard“ nicht ehrt, wird mit dem Tod bestraft – können Justus, Peter und Bob der tödlichen Rache entkommen?",
-		"publishedAt": "2022",
-		"cover": "https://static.wikia.nocookie.net/t3i-wiki/images/7/7d/Der_wei%C3%9Fe_Leopard2.jpg/revision/latest/scale-to-width-down/350?cb=20211113103928",
-		"isbn": "9783440175286"
-	},
-	{
-		"name": "Die drei ??? Das Dorf der Teufel",
-		"author": "John Beckmann, Ivar Leon Menger",
-		"genre": "action",
-		"description": "Die drei ??? staunen nicht schlecht, als sie auf der Suche nach einem vermissten Freund des Chauffeurs Morton in Redwood Falls ankommen. Als wäre die Zeit stehengeblieben … denn die Bewohner des abgelegenen Dorfs lehnen jegliche Form der modernen Technologie und des Fortschritts ab. Doch dies ist nicht die einzige Überraschung für Justus, Peter und Bob, denn bereits nach kurzer Zeit überschlagen sich die Ereignisse und das Dorf der Teufel zeigt sein wahres Gesicht ...",
-		"publishedAt": "2017",
-		"cover": "https://cdn.smehost.net/hcmssmeappscom-delabelsprod/kosmos-import/kos_978-3-440-15898-2.",
-		"isbn": "9783440158982"
-	}
+   {
+      "name": "Harry Potter und der Stein der Weisen",
+      "author": "J.K. Rowling",
+      "genre": "fantasy",
+      "cover": "https://medien.umbreitkatalog.de/bildzentrale_original/978/355/131/7254.jpg",
+      "publishedAt": "26.7.1997",
+      "description": "„Harry Potter und der Stein der Weisen“ ist der erste Band der Harry Potter Reihe. Es handelt von einem Jungen der bei seiner Tante, Onkel und Cousin auf gewachsen ist. Als Harry 11 Jahre alt wurde erfuhr er, dass er von Zauberern abstammt und selbst einer ist. Er soll nach Hogwarts (einer Zauberer Schule) gehen.",
+      "isbn": "3551551677"
+   },
+   {
+      "name": "Harry Potter und der Gefangene von Askaban",
+      "author": "J.K. Rowling",
+      "genre": "fantasy",
+      "cover": "https://m.media-amazon.com/images/I/51KF7EPwhoL.jpg",
+      "publishedAt": "3.6.2004",
+      "description": "Zu Beginn des dritten Schuljahrs in Hogwarts erfährt Harry Potter, warum er straffrei ausging: Sirius Black, der Gefangene von Askaban, ist entwichen, und es wird befürchtet, dass er auf der Suche nach Harry Potter ist. Deshalb bewachen die grausigen Dementoren aus Askaban das Internat.",
+      "isbn": "3551551693"
+   },
+   {
+      "name": "Harry Potter und der Orden des Phönix",
+      "author": "J.K. Rowling",
+      "genre": "fantasy",
+      "cover": "https://s3.sky.ch/img/moviecover/ch/images/17d/20423d.jpg",
+      "publishedAt": "21.6.2003",
+      "description": "Der Phönixorden ist eine bereits mehrere Jahre bestehende Organisation, die Hogwarts Schulleiter Albus Dumbledore gegründet hatte, um Lord Voldemort und seine Anhänger organisiert zu bekämpfen. Ebendieser Bund wurde erneut ins Leben gerufen, nachdem Harry im vorherigen Schuljahr Voldemorts Rückkehr miterlebt hat.",
+      "isbn": "3551555559"
+   },
+   {
+      "name": "Harry Potter und die Kammer des Schreckens",
+      "author": "J.K. Rowling",
+      "genre": "fantasy",
+      "cover": "https://img1.od-cdn.com/ImageType-100/3450-1/%7B7E28E53E-D4E7-43BF-BA8F-50A46B24F45B%7DIMG100.jpg",
+      "publishedAt": " 2.7.1998",
+      "description": "Harry Potter und der Orden",
+      "isbn": "3551551685"
+   },
+   {
+      "name": "Beautiful Disaster",
+      "author": "Jamie McGuire",
+      "genre": "romance",
+      "cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783492303347_1492436739950_xxl.jpg",
+      "description": "Im ersten Band der Maddox-Brüder Reihe \"Beautiful Disaster\" geht es um die beiden Studenten Abby und Travis, die sich aufgrund einer verlorenen Wette näher kommen. Doch Abby sträubt sich vehement gegen ihre Gefühle für den Bad Boy und wendet sich dem Traum aller Schwiegermütter, Parker, zu. Wird Travis es schaffen, Abbys Herz zu erobern oder wird ihr Geheimnis den beiden im Wege stehen? Das schöne Cover verspricht nicht zu viel, denn Jamie McGuire gelingt es mit diesem Roman eine wunderbare Liebesgeschichte mit dunklen Geheimnissen zu erzählen.",
+      "publishedAt": "16.04.2013",
+      "isbn": "9783492303347"
+   },
+   {
+      "name": "Wenn du mich siehst",
+      "author": "Nicholas Sparks",
+      "genre": "romance",
+      "cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783453268760_1516146579000_xxl.jpg",
+      "description": "Nicholas Sparks ist aus den Bücherregalen nicht mehr wegzudenken und seit seine Romane regelmäßig verfilmt werden, ist er weltweit berühmt. \"Wenn du mich siehst\" ist seine neuste Erscheinung und wieder einmal weiß er ganz genau, was Frauenherzen berührt und uns zum dahinschmelzen bringt. Als die Rechtsanwältin Maria eine Reifenpanne hat, ist ihre einzige Hilfe ein bedrohlich wirkender Kerl, muskelbepackt und mit blau geschwollenem Gesicht. Der MMA-Kämpfer Colin ist gerade auf Bewährung und kann sich keinen Fehler erlauben, doch die aufkeimende Liebe zwischen Maria und ihm bringt beide immer mehr in Schwierigkeiten.",
+      "publishedAt": "08.03.2016",
+      "isbn": "9783453268760"
+   },
+   {
+      "name": "Für immer vielleicht",
+      "author": "Cecelia Ahern",
+      "genre": "romance",
+      "cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783596511051_1510310229000_xxl.jpg",
+      "description": "Rosie und Alex sind beste Freunde seit Kindertagen und im Laufe ihrer gemeinsamen Zeit entwickeln sich auf beiden Seiten Gefühle. Das Schicksal legt den beiden jedoch immer wieder Steine in den Weg, sei es ein Umzug oder ein unerwartetes Kind. \"Für immer vielleicht\" ist ein Roman, der den Leser mitfiebern lässt, teilweise traurig über die Gefühllosigkeit des Schicksals macht, aber gleichzeitig auch sehr hoffnungsvoll ist. Wer die Bücher von Cecelia Ahern mag, dem wird die Geschichte, die lediglich mittels Briefen, E-Mails und Chat-Logs erzählt wird, sehr gut gefallen.",
+      "publishedAt": "01.03.2006",
+      "isbn": "9783828978362"
+   },
+   {
+      "name": "Léon und Louise",
+      "author": "Alex Capus",
+      "genre": "romance",
+      "cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783423141284_1645017935000_xxl.jpg",
+      "description": "In einer Zeit, die überschattet wird von den grausamen Ereignissen im Ersten Weltkrieg, ist Liebe oft das Einzige, was den Menschen Hoffnung auf Besserung schenkt. Als Léon Louise auf ihrem Fahrrad sieht, ist es für ihn Liebe auf den ersten Blick, doch ihnen sind nur 24 gemeinsame Stunden vergönnt, bis ein Bombenangriff die beiden voneinander trennt. Sowohl Léon als auch Louise sind davon überzeugt, dass der andere tot ist - bis sie sich zehn Jahre später in Paris wieder begegnen. Der gebürtige Franzose Alex Capus versteht sein Handwerk und entführt uns mit seinen historischen Romanen in die Vergangenheit.",
+      "publishedAt": "07.02.2011",
+      "isbn": "9783446236301"
+   },
+   {
+      "name": "Die zwei Leben der Alice Pendelbury",
+      "author": "Marc Levy",
+      "genre": "romance",
+      "cover": "https://images.lovelybooks.de/img/110x/cover.allsize.lovelybooks.de/9783442380282_1533679470000_xxl.jpg",
+      "description": "Alice Pendelbury wird von einer Hellseherin prophezeit, dass gerade der wichtigste Mensch in ihrem zukünftigen Leben hinter ihr vorbeigegangen ist. Die Suche nach ihm gestaltet sich jedoch schwierig, muss Alice doch erst sechs bestimmten Personen begegnen, bis sie das neue Leben, das angeblich auf sie wartet, beginnen kann. Die junge Engländerin begibt sich kurzerhand mit ihrem Nachbarn auf eine spannende Reise. Marc Levys' erster Roman \"Solange du da bist\" wurde bereits ein Riesenerfolg und der Autor beweist immer wieder aufs Neue, dass er ein Händchen für wunderbare Liebesromane hat.",
+      "publishedAt": "28.05.2013",
+      "isbn": "9783764504441"
+   },
+   {
+      "name": "Pokémon Adventures, Band 1",
+      "author": "Hidenori Kusaka",
+      "genre": "comic",
+      "description": "",
+      "publishedAt": "1.3.2001",
+      "cover": "https://www.pokewiki.de/images/thumb/5/56/Pok%C3%A9Spe_Panini_Bd01.png/250px-Pok%C3%A9Spe_Panini_Bd01.png",
+      "isbn": "9783898851954"
+   },
+   {
+      "name": "Band 2 (Pocket Monsters SPECIAL)",
+      "author": "Hidenori Kusaka",
+      "genre": "comic",
+      "description": "",
+      "publishedAt": "1.6.2001",
+      "cover": "https://www.pokewiki.de/images/thumb/7/74/Pok%C3%A9Spe_Panini_Bd02.png/250px-Pok%C3%A9Spe_Panini_Bd02.png",
+      "isbn": "9783898851954"
+   },
+   {
+      "name": "Band 3 (Pocket Monsters SPECIAL)",
+      "author": "Hidenori Kusaka",
+      "genre": "comic",
+      "description": "",
+      "publishedAt": "1.9.2001",
+      "cover": "https://www.pokewiki.de/images/thumb/f/f5/Pok%C3%A9Spe_Panini_Bd03.jpg/250px-Pok%C3%A9Spe_Panini_Bd03.jpg",
+      "isbn": "9783898851954"
+   },
+   {
+      "name": "Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "genre": "crime",
+      "description": "Sherlock Holmes ist der Inbegriff des scharfsinnigen Gentleman-Detektivs: Wenn er mit seinem Freund Dr. Watson ein wenig kombiniert, ist selbst der kniffligste Fall schon so gut wie gelöst. Die Welt des Sherlock Holmes ist eine Sammlung von Geschichten ganz unterschiedlicher Länge, an denen Arthur Conan Doyle zeitlebens geschrieben hat. Vier seiner Fälle wuchsen zu Romanform an, sie versammelt dieser zum Schmökern einladende Band: 'Eine Studie in Scharlachrot', 'Das Zeichen der Vier', 'Der Hund der Baskervilles' und 'Das Tal des Grauens'.",
+      "publishedAt": "31.7.2013",
+      "cover": "https://m.media-amazon.com/images/I/51kjk79ygyL.jpg",
+      "isbn": "9783730600306"
+   },
+   {
+      "name": "Sherlock Holmes - Das Zeichen der Vier",
+      "author": "Arthur Conan Doyle",
+      "genre": "crime",
+      "description": "Sherlock Holmes und Dr. Watson sollen Miss Mary Morstan bei der Suche nach ihrem verschollenen Vater helfen. Dieser war Offizier in Indien und verschwand bei seiner Rückkehr nach England. Ein anonymer Brief bringt sie auf die Spur von Thaddeus Sholto, dessen Vater mit dem Gesuchten in derselben Kompanie gedient hat. Thaddeus berichtet von einem Schatz, den die beiden Männer mit aus Indien brachten, der aber seinem Bruder das Leben kostete und anschließend verschwand.",
+      "publishedAt": "1.2.1890",
+      "cover": "https://bilder.buecher.de/produkte/43/43540/43540707z.jpg",
+      "isbn": "9783596035663"
+   },
+   {
+      "name": "Babylon Berlin - Moabit",
+      "author": "Volker Kutscher, Kat Menschik",
+      "genre": "crime",
+      "description": "",
+      "publishedAt": "5.8.2017",
+      "cover": "https://covers.openlibrary.org/b/id/10135424-M.jpg",
+      "isbn": "9783869711553"
+   },
+   {
+      "name": "Babylon Berlin - Der stumme Tod",
+      "author": "Volker Kutscher",
+      "genre": "crime",
+      "description": "",
+      "publishedAt": "4.5.2020",
+      "cover": "https://covers.openlibrary.org/b/id/11576185-M.jpg",
+      "isbn": "9783869711553"
+   },
+   {
+      "name": "Die drei ??? Das Gespensterschloss ",
+      "author": "Christopher Tauber",
+      "genre": "action",
+      "description": "Ein ganz besonderer Leckerbissen für alle Liebhaber der Klassiker-Ära: \"Die drei ??? und das Gespensterschloss\", einer der All-Time-Favourites der Kultreihe, entfaltet als Graphic Novel einen unwiderstehlichen Reiz. Ines Korth übersetzt die spannende Story um ein Schloss, in dem es spukt, und einen eigenartigen Stummfilmstar in atmosphärisch starke Bilder – ganz im Retro-Stil der 1960er-Jahre. Ein Muss für Fans!",
+      "publishedAt": "2022",
+      "cover": "https://cdn.smehost.net/hcmssmeappscom-delabelsprod/produkte/buecher/das-gespensterschloss.png",
+      "isbn": "783440170915"
+   },
+   {
+      "name": "Die drei ??? Der weiße Leopard",
+      "author": "Kosmos",
+      "genre": "action",
+      "description": "Kein Einbrecher dieser Welt kann den „weißen Leopard\" stehlen. Ein unüberwindbares Sicherheitssystem sollte den edlen Schatz schützen. Doch die Schale aus dem 17. Jahrhundert ist verschwunden. Ein brisanter Fall für die drei ???, denn auf der Schale liegt ein Fluch der Samurai. Wer den „weißen Leopard“ nicht ehrt, wird mit dem Tod bestraft – können Justus, Peter und Bob der tödlichen Rache entkommen?",
+      "publishedAt": "2022",
+      "cover": "https://static.wikia.nocookie.net/t3i-wiki/images/7/7d/Der_wei%C3%9Fe_Leopard2.jpg/revision/latest/scale-to-width-down/350?cb=20211113103928",
+      "isbn": "9783440175286"
+   },
+   {
+      "name": "Gregs Tagebuch 1 - Von Idioten umzingelt",
+      "author": "Jeff Kinney",
+      "genre": "comic",
+      "description": "",
+      "publishedAt": "2011",
+      "cover": "https://covers.openlibrary.org/b/id/10485110-M.jpg",
+      "isbn": "9783843200059"
+   }
 ]

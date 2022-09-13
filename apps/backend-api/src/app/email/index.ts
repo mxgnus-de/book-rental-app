@@ -51,12 +51,12 @@ export async function sendTemplateMail(templateOptions: TemplateMailOptions) {
 
 	try {
 		const mail = await mailer.send(
-			template as never,
-			templateProps as never,
+			template as any,
+			templateProps as any,
 			mailOptions
 		);
 
-		fileLogger.debug(
+		fileLogger.info(
 			`Sending template mail for ${template} to ${
 				Array.isArray(mailOptions.to)
 					? mailOptions.to?.join(', ')
@@ -68,7 +68,17 @@ export async function sendTemplateMail(templateOptions: TemplateMailOptions) {
 		return mail;
 	} catch (e) {
 		fileLogger.error(e);
-		if (!isRetry) queueTemplateMail(templateOptions);
+		if (!isRetry) {
+			setTimeout(
+				() =>
+					queueTemplateMail(
+						Object.assign(templateOptions, {
+							isRetry: true,
+						})
+					),
+				1000 * 60
+			);
+		}
 		return null;
 	}
 }

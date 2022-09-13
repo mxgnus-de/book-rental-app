@@ -22,19 +22,21 @@ enum BookGenre {
 }
 
 model User {
-   userId                String                  @id @unique @default(cuid())
-   createdAt             DateTime                @default(value: now())
-   surname               String
-   lastname              String
-   username              String                  @unique
-   email                 String                  @unique
-   password              String
-   birthday              DateTime
-   permissions           String                  @default(value: "USER")
-   isVerified            Boolean                 @default(value: false)
+   userId        String   @id @unique @default(cuid())
+   createdAt     DateTime @default(value: now())
+   surname       String
+   lastname      String
+   username      String   @unique
+   email         String   @unique
+   password      String
+   birthday      DateTime
+   permissions   String   @default(value: "USER")
+   isVerified    Boolean  @default(value: false)
+   isDeactivated Boolean  @default(value: false)
+
    session               Session[]
    rentedBook            RentedBook[]
-   favoriteBooks         FavoriteBooks[]
+   favoriteBook          FavoriteBook[]
    userVerification      UserVerification?
    UserVerificationReset UserVerificationResend?
 
@@ -66,25 +68,27 @@ model Session {
 }
 
 model Book {
-   bookId        String          @id @unique @default(cuid())
-   name          String          @unique
-   author        String
-   description   String?         @db.Text
-   genre         BookGenre
-   rentedBook    RentedBook?
-   favoriteBooks FavoriteBooks[]
-   cover         String
-   publishedAt   DateTime
-   isbn          String
-   createdAt     DateTime        @default(value: now())
+   bookId      String    @id @unique @default(cuid())
+   name        String    @unique
+   author      String
+   description String?   @db.Text
+   genre       BookGenre
+   cover       String
+   publishedAt DateTime
+   isbn        String
+   createdAt   DateTime  @default(value: now())
+
+   rentedBook   RentedBook[]
+   favoriteBook FavoriteBook[]
 
    @@index([name, bookId, author, genre, isbn])
    @@fulltext([description])
 }
 
 model RentedBook {
+   id         String    @id @unique @default(cuid())
    userId     String
-   bookId     String    @unique
+   bookId     String
    rentedAt   DateTime  @default(value: now())
    returnedAt DateTime?
    isRented   Boolean   @default(value: true)
@@ -95,7 +99,7 @@ model RentedBook {
    @@index([userId, bookId])
 }
 
-model FavoriteBooks {
+model FavoriteBook {
    id        String   @id @unique @default(cuid())
    userId    String
    bookId    String

@@ -5,6 +5,7 @@ import {
 	ResendVerificationCodeResponse,
 } from '@book-rental-app/shared/types';
 import {
+	Meta,
 	useUser,
 	useUserUpdate,
 	WrappedLoadingSpinner,
@@ -40,13 +41,29 @@ const LoginPage: NextPage = () => {
 	const [resendCodeEmail, setResendCodeEmail] = useState<string | null>(null);
 	const [resendCode, setResendCode] = useState<string | null>(null);
 	const [showResendCodeButton, setShowResendCodeButton] = useState(false);
+	const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
 	const user = useUser();
 
 	useEffect(() => {
 		if (user) {
-			router.push('/');
+			router.push(redirectUrl || '/');
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user]);
+
+	useEffect(() => {
+		const redirectUrl = router.query.redirect;
+
+		if (redirectUrl && typeof redirectUrl === 'string') {
+			try {
+				const url = new URL(redirectUrl);
+				setRedirectUrl(url.href);
+			} catch (err) {
+				setRedirectUrl(null);
+			}
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [router.isReady]);
 
 	async function login() {
 		if (!usernameOrEmail || !password) {
@@ -82,6 +99,10 @@ const LoginPage: NextPage = () => {
 							: 'Dein Account wurde noch nicht verifiziert'
 					}! Bitte überprüfe deine E-Mails!`
 				);
+			} else if (data.success === false && data.isDeactivated === true) {
+				return showErrorNotification(
+					'Dein Account ist auf unbestimmte Zeit deaktiviert!'
+				);
 			} else if (data.success === true) {
 				setCookie('session', data.sessionId, {
 					domain: process.env.NEXT_PUBLIC_COOKIES_HOSTNAME,
@@ -90,10 +111,8 @@ const LoginPage: NextPage = () => {
 				});
 				showSuccessNotification('Du wurdest erfolgreich eingeloggt!', 4);
 				setUser(data.user);
-				router.push('/');
 			}
 		} catch (error) {
-			console.log(error);
 			if (isEmail) {
 				showErrorNotification('Email oder Passwort falsch');
 			} else {
@@ -138,77 +157,80 @@ const LoginPage: NextPage = () => {
 	}
 
 	return (
-		<AuthLayout bgImage="/images/library_art.min.jpg">
-			<Headline>Anmelden</Headline>
-			<FormWrapper>
-				<InputWrapper>
-					<InputLabel required>Benutzername/Email</InputLabel>
-					<Input
-						type="text"
-						placeholder="Benutzername oder Email"
-						value={usernameOrEmail}
-						onChange={(e) => setusernameOrEmail(e.target.value)}
-					/>
-				</InputWrapper>
-				<InputWrapper>
-					<InputLabel required>Passwort</InputLabel>
-					<Input
-						type="password"
-						placeholder="Passwort"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
-				</InputWrapper>
-			</FormWrapper>
-			<SubmitButtonWrapper>
-				<SubmitButton
-					onClick={() => !isLoading && login()}
-					style={{
-						cursor: isLoading ? 'not-allowed' : 'pointer',
-					}}
-				>
-					{isLoading ? <WrappedLoadingSpinner /> : 'Einloggen'}
-				</SubmitButton>
-				{showResendCodeButton && (
+		<>
+			<Meta title="Einloggen" />
+			<AuthLayout bgImage="/images/library_art.min.jpg">
+				<Headline>Anmelden</Headline>
+				<FormWrapper>
+					<InputWrapper>
+						<InputLabel required>Benutzername/Email</InputLabel>
+						<Input
+							type="text"
+							placeholder="Benutzername oder Email"
+							value={usernameOrEmail}
+							onChange={(e) => setusernameOrEmail(e.target.value)}
+						/>
+					</InputWrapper>
+					<InputWrapper>
+						<InputLabel required>Passwort</InputLabel>
+						<Input
+							type="password"
+							placeholder="Passwort"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</InputWrapper>
+				</FormWrapper>
+				<SubmitButtonWrapper>
 					<SubmitButton
-						onClick={() => !isLoading && resendVerificationCode()}
+						onClick={() => !isLoading && login()}
 						style={{
 							cursor: isLoading ? 'not-allowed' : 'pointer',
 						}}
 					>
-						{isLoading ? (
-							<WrappedLoadingSpinner />
-						) : (
-							'Verifikationscode erneut senden'
-						)}
+						{isLoading ? <WrappedLoadingSpinner /> : 'Einloggen'}
 					</SubmitButton>
-				)}
-			</SubmitButtonWrapper>
-			<FooterContainer>
-				{!showResendCodeButton && resendCodeEmail && resendCode && (
-					<FooterContent
-						style={{
-							fontSize: '14px',
-							color: '#bebebe',
-						}}
-						as="button"
-						onClick={() => setShowResendCodeButton(true)}
-					>
-						Du hast keine Email bekommen?
+					{showResendCodeButton && (
+						<SubmitButton
+							onClick={() => !isLoading && resendVerificationCode()}
+							style={{
+								cursor: isLoading ? 'not-allowed' : 'pointer',
+							}}
+						>
+							{isLoading ? (
+								<WrappedLoadingSpinner />
+							) : (
+								'Verifikationscode erneut senden'
+							)}
+						</SubmitButton>
+					)}
+				</SubmitButtonWrapper>
+				<FooterContainer>
+					{!showResendCodeButton && resendCodeEmail && resendCode && (
+						<FooterContent
+							style={{
+								fontSize: '14px',
+								color: '#bebebe',
+							}}
+							as="button"
+							onClick={() => setShowResendCodeButton(true)}
+						>
+							Du hast keine Email bekommen?
+						</FooterContent>
+					)}
+					<FooterContent>
+						Noch keinen Account?{' '}
+						<span
+							style={{
+								fontWeight: 'bold',
+							}}
+						>
+							<Link href="/register">Registrieren</Link>
+						</span>
 					</FooterContent>
-				)}
-				<FooterContent>
-					Noch keinen Account?{' '}
-					<span
-						style={{
-							fontWeight: 'bold',
-						}}
-					>
-						<Link href="/register">Registrieren</Link>
-					</span>
-				</FooterContent>
-			</FooterContainer>
-		</AuthLayout>
+				</FooterContainer>
+			</AuthLayout>
+		</>
 	);
 };
 

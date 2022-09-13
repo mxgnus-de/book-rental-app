@@ -24,6 +24,8 @@ export function BookSwipeRow({ books, name }: BookSwipeRowProps) {
 				pauseOnMouseEnter: true,
 				disableOnInteraction: false,
 			},
+			preventClicksPropagation: false,
+			preventClicks: false,
 			modules: [Autoplay],
 			breakpoints: {
 				500: {
@@ -56,6 +58,7 @@ export function BookSwipeRow({ books, name }: BookSwipeRowProps) {
 		return () => {
 			swiper.destroy();
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
@@ -99,4 +102,11 @@ const Wrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+`;
+
+const BookRow = styled.div`
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+	overflow-x: scroll;
 `;

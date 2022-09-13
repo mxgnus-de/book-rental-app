@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import { useUser, useUserUpdate } from '../contexts';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { UserPermission } from '@book-rental-app/shared/utils';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 interface DropdownProps {
 	isopened: number;
@@ -15,6 +17,7 @@ interface DropdownItemType {
 	label: string;
 	icon: JSX.Element;
 	onAction: () => void;
+	invisible?: boolean;
 }
 
 function User() {
@@ -23,11 +26,27 @@ function User() {
 	const [dropdownOpened, setDropdownOpened] = useState(false);
 	const router = useRouter();
 
+	useEffect(() => {
+		if (dropdownOpened) {
+			setDropdownOpened(false);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [router.pathname]);
+
+	if (!user) return null;
+	const userPermissions = new UserPermission(user);
+
 	const dropdownItems: DropdownItemType[] = [
 		{
 			label: 'Profil',
 			icon: <AccountCircleRoundedIcon />,
 			onAction: () => router.push('/profile'),
+		},
+		{
+			label: 'Admin Panel',
+			icon: <AdminPanelSettingsIcon />,
+			onAction: () => router.push('/admin'),
+			invisible: !userPermissions.hasPermission('ADMIN'),
 		},
 		{
 			label: 'Einstellungen',
@@ -41,8 +60,6 @@ function User() {
 		},
 	];
 
-	if (!user) return null;
-
 	return (
 		<Wrapper>
 			<UserWrapper onClick={() => setDropdownOpened((prev) => !prev)}>
@@ -50,12 +67,20 @@ function User() {
 				<DropdownIcon isopened={+dropdownOpened} />
 			</UserWrapper>
 			<DropwdownWrapper isopened={+dropdownOpened}>
-				{dropdownItems.map(({ label, onAction, icon }) => (
-					<DropdownItem key={label} onClick={onAction}>
-						{icon}
-						<span>{label}</span>
-					</DropdownItem>
-				))}
+				{dropdownItems
+					.filter(({ invisible }) => invisible !== true)
+					.map(({ label, onAction, icon }) => (
+						<DropdownItem
+							key={label}
+							onClick={() => {
+								onAction();
+								setDropdownOpened(false);
+							}}
+						>
+							{icon}
+							<span>{label}</span>
+						</DropdownItem>
+					))}
 			</DropwdownWrapper>
 		</Wrapper>
 	);

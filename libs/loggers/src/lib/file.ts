@@ -54,28 +54,31 @@ export class FileLogger {
 		message: any,
 		withoutConsole?: true
 	): void {
-		if (this.shouldConsoleLog(withoutConsole))
-			this.consolelogger.log(level, message);
+		if (withoutConsole !== true) this.consolelogger.log(level, message);
 		this.logger.log(level, message);
 	}
 
 	public info(message: any, withoutConsole?: true): void {
-		if (this.shouldConsoleLog(withoutConsole)) this.consolelogger.info(message);
+		if (this.shouldConsoleLog(withoutConsole))
+			this.consolelogger.info(message);
 		this.logger.info(message);
 	}
 
 	public error(message: any, withoutConsole?: true): void {
-		if (this.shouldConsoleLog(withoutConsole)) this.consolelogger.error(message);
+		if (this.shouldConsoleLog(withoutConsole))
+			this.consolelogger.error(message);
 		this.logger.error(message);
 	}
 
 	public warn(message: any, withoutConsole?: true): void {
-		if (this.shouldConsoleLog(withoutConsole)) this.consolelogger.warn(message);
+		if (this.shouldConsoleLog(withoutConsole))
+			this.consolelogger.warn(message);
 		this.logger.warn(message);
 	}
 
 	public debug(message: any, withoutConsole?: true): void {
-		if (this.shouldConsoleLog(withoutConsole)) this.consolelogger.debug(message);
+		if (this.shouldConsoleLog(withoutConsole))
+			this.consolelogger.debug(message);
 		this.logger.debug(message);
 	}
 

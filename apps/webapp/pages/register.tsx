@@ -3,8 +3,15 @@ import {
 	RegisterApiRequest,
 	RegisterApiResponse,
 } from '@book-rental-app/shared/types';
-import { WrappedLoadingSpinner } from '@book-rental-app/shared/ui-components';
-import { apiClient, emailRegex } from '@book-rental-app/shared/utils';
+import {
+	Meta,
+	WrappedLoadingSpinner,
+} from '@book-rental-app/shared/ui-components';
+import {
+	apiClient,
+	capitalizeFirstLetter,
+	emailRegex,
+} from '@book-rental-app/shared/utils';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -38,7 +45,7 @@ const RegisterPage: NextPage = () => {
 		surname && lastname && username && email && password && birthday;
 
 	async function register() {
-      const mailDomain = email.split('@')[1];
+		const mailDomain = email.split('@')[1];
 
 		if (!canRegister) {
 			return showErrorNotification('Bitte fülle alle Felder aus!');
@@ -47,7 +54,13 @@ const RegisterPage: NextPage = () => {
 				'Dein Passwort muss mindestens 8 Zeichen lang sein!'
 			);
 		} else if (mailDomain.includes('outlook')) {
-			return showErrorNotification(`${mailDomain} E-Mail Addressen können leider nicht unterstützt werden :/`);
+			return showErrorNotification(
+				`${mailDomain} E-Mail Addressen können leider nicht unterstützt werden :(`
+			);
+		} else if (!emailRegex.test(email)) {
+			return showErrorNotification(
+				'Bitte gib eine gültige E-Mail Adresse an!'
+			);
 		}
 
 		setIsLoading(true);
@@ -86,87 +99,90 @@ const RegisterPage: NextPage = () => {
 	}
 
 	return (
-		<AuthLayout bgImage="/images/library_art.min.jpg">
-			<Headline>Registrieren</Headline>
-			<FormWrapper>
-				<InputWrapper>
-					<InputLabel required>Vorname</InputLabel>
-					<Input
-						type="text"
-						placeholder="Max"
-						value={surname}
-						onChange={(e) => setSurname(e.target.value)}
-					/>
-				</InputWrapper>
-				<InputWrapper>
-					<InputLabel required>Nachname</InputLabel>
-					<Input
-						type="text"
-						placeholder="Mustermann"
-						value={lastname}
-						onChange={(e) => setLastname(e.target.value)}
-					/>
-				</InputWrapper>
-				<InputWrapper>
-					<InputLabel required>Benutzername</InputLabel>
-					<Input
-						type="text"
-						placeholder="MaxMustermann"
-						value={username}
-						onChange={(e) => setUsername(e.target.value)}
-					/>
-				</InputWrapper>
-				<InputWrapper>
-					<InputLabel required>Email</InputLabel>
-					<Input
-						type="email"
-						placeholder="max.mustermann@example.de"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-					/>
-				</InputWrapper>
-				<InputWrapper>
-					<InputLabel required>Passwort</InputLabel>
-					<Input
-						type="password"
-						placeholder="Passwort"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
-				</InputWrapper>
-				<InputWrapper>
-					<InputLabel required>Geburtsdatum</InputLabel>
-					<Input
-						type="date"
-						placeholder="Geburtsdatum"
-						value={birthday}
-						onChange={(e) => setBirthday(e.target.value)}
-					/>
-				</InputWrapper>
-			</FormWrapper>
-			<SubmitButtonWrapper>
-				<SubmitButton
-					onClick={() => !isLoading && register()}
-					style={{
-						cursor: isLoading ? 'not-allowed' : 'pointer',
-					}}
-				>
-					{isLoading ? <WrappedLoadingSpinner /> : 'Registrieren'}
-				</SubmitButton>
-			</SubmitButtonWrapper>
-			<FooterContainer>
-				<FooterContent>
-					Du hast schon einen Account?{' '}
-					<span
+		<>
+			<Meta title="Registrieren" />
+			<AuthLayout bgImage="/images/library_art.min.jpg">
+				<Headline>Registrieren</Headline>
+				<FormWrapper>
+					<InputWrapper>
+						<InputLabel required>Vorname</InputLabel>
+						<Input
+							type="text"
+							placeholder="Max"
+							value={surname}
+							onChange={(e) => setSurname(e.target.value)}
+						/>
+					</InputWrapper>
+					<InputWrapper>
+						<InputLabel required>Nachname</InputLabel>
+						<Input
+							type="text"
+							placeholder="Mustermann"
+							value={lastname}
+							onChange={(e) => setLastname(e.target.value)}
+						/>
+					</InputWrapper>
+					<InputWrapper>
+						<InputLabel required>Benutzername</InputLabel>
+						<Input
+							type="text"
+							placeholder="MaxMustermann"
+							value={username}
+							onChange={(e) => setUsername(e.target.value)}
+						/>
+					</InputWrapper>
+					<InputWrapper>
+						<InputLabel required>Email</InputLabel>
+						<Input
+							type="email"
+							placeholder="max.mustermann@example.de"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+					</InputWrapper>
+					<InputWrapper>
+						<InputLabel required>Passwort</InputLabel>
+						<Input
+							type="password"
+							placeholder="Passwort"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</InputWrapper>
+					<InputWrapper>
+						<InputLabel required>Geburtsdatum</InputLabel>
+						<Input
+							type="date"
+							placeholder="Geburtsdatum"
+							value={birthday}
+							onChange={(e) => setBirthday(e.target.value)}
+						/>
+					</InputWrapper>
+				</FormWrapper>
+				<SubmitButtonWrapper>
+					<SubmitButton
+						onClick={() => !isLoading && register()}
 						style={{
-							fontWeight: 'bold',
+							cursor: isLoading ? 'not-allowed' : 'pointer',
 						}}
 					>
-						<Link href="/login">Einloggem</Link>
-					</span>
-				</FooterContent>
-			</FooterContainer>
-		</AuthLayout>
+						{isLoading ? <WrappedLoadingSpinner /> : 'Registrieren'}
+					</SubmitButton>
+				</SubmitButtonWrapper>
+				<FooterContainer>
+					<FooterContent>
+						Du hast schon einen Account?{' '}
+						<span
+							style={{
+								fontWeight: 'bold',
+							}}
+						>
+							<Link href="/login">Einloggem</Link>
+						</span>
+					</FooterContent>
+				</FooterContainer>
+			</AuthLayout>
+		</>
 	);
 };
 

@@ -17,15 +17,10 @@ config.autoAddCss = false;
 
 function WebApp({ Component, pageProps, router }: AppProps) {
 	const notifications = useNotifications();
-	const showNotification =
-		notifications.visible && notifications.message && notifications.type;
 
 	return (
 		<>
-			<Meta
-				title="Book-rental-App"
-				serviceUrl={process.env.NEXT_PUBLIC_SERVICE_URL}
-			/>
+			<Meta title="Home" />
 			<NextNprogress
 				options={{
 					showSpinner: false,
@@ -36,8 +31,8 @@ function WebApp({ Component, pageProps, router }: AppProps) {
 			<ThemeProvider theme={defaultTheme}>
 				<CookiesProvider>
 					<GlobalDefaultStyle />
-					<UserProvider user={pageProps.user ?? null}>
-						{showNotification && (
+					<UserProvider user={(pageProps as any).user ?? null}>
+						{notifications.visible && (
 							<Notification
 								message={notifications.message}
 								type={notifications.type}

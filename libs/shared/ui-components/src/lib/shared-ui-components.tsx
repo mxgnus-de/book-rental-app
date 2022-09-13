@@ -13,3 +13,5 @@ export * from './box';
 export * from './notification';
 export * from './spinners';
 export * from './common';
+export * from './dropdown';
+export * from './animations';

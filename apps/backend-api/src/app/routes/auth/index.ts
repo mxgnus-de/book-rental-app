@@ -17,7 +17,7 @@ import {
 import prisma from '../../prisma';
 import bcrypt from 'bcrypt';
 import { normalizeUser } from '../../helpers/user';
-import { withLoginMiddleware } from '../../middleware/authorized';
+import { requireAuthMiddleware } from '../../middleware/auth';
 import {
 	queueAccountVerificationTemplate,
 	queueAccountVerifiedTemplate,
@@ -202,6 +202,13 @@ router.post(
 			};
 
 			return res.json(response);
+		} else if (user.isDeactivated) {
+			const response: LoginApiResponse = {
+				success: false,
+				isDeactivated: true,
+			};
+
+			return res.json(response);
 		} else if (!bcrypt.compareSync(password, user.password)) {
 			return badRequest('Invalid password').send(res);
 		}
@@ -228,7 +235,7 @@ router.post(
 // @route POST api/auth/logout
 router.post(
 	'/logout',
-	withErrorHandler(withLoginMiddleware),
+	withErrorHandler(requireAuthMiddleware),
 	withErrorHandler(async (req, res) => {
 		const session = req.session;
 		if (!session) return unauthorized().send(res);

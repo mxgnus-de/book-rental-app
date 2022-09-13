@@ -4,7 +4,7 @@ import {
 	UserApiResponse,
 	UserWithoutPassword,
 } from '@book-rental-app/shared/types';
-import { apiClient } from '@book-rental-app/shared/utils';
+import { apiClient, getUser } from '@book-rental-app/shared/utils';
 import { useRouter } from 'next/router';
 import { createContext, useContext, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
@@ -50,11 +50,19 @@ export function UserProvider(props: UserProviderProps) {
 	async function revalidateUser() {
 		if (!cookies.session) return;
 
-		try {
-			const response = await apiClient.get<UserApiResponse>('/@me');
-			setUser(response.data.user);
-		} catch (error) {
+		const user = await getUser();
+
+		if (user) {
+			setUser(user);
+		} else {
 			setUser(null);
+
+			if (process.env.NODE_ENV === 'production') {
+				deleteCookie('session', {
+					path: '/',
+					domain: process.env.NEXT_PUBLIC_COOKIES_HOSTNAME,
+				});
+			}
 		}
 	}
 
