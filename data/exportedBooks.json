@@ -1,0 +1,211 @@
+[
+  {
+    "bookId": "cl80pcbh20000dgjcrt2imnzy",
+    "name": "Harry Potter und der Orden des Phönix",
+    "author": "J.K. Rowling",
+    "description": "Der Phönixorden ist eine bereits mehrere Jahre bestehende Organisation, die Hogwarts Schulleiter Albus Dumbledore gegründet hatte, um Lord Voldemort und seine Anhänger organisiert zu bekämpfen. Ebendieser Bund wurde erneut ins Leben gerufen, nachdem Harry im vorherigen Schuljahr Voldemorts Rückkehr miterlebt hat.",
+    "genre": "fantasy",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20000dgjcrt2imnzy.jpg",
+    "publishedAt": "2003-06-20T22:00:00.000Z",
+    "isbn": "3551555559",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20001dgjchlzazq4e",
+    "name": "Harry Potter und die Kammer des Schreckens",
+    "author": "J.K. Rowling",
+    "description": "Harry Potter und der Orden",
+    "genre": "fantasy",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104274/book-rental-app/books/cl80pcbh20001dgjchlzazq4e.jpg",
+    "publishedAt": "1998-07-01T22:00:00.000Z",
+    "isbn": "3551551685",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20002dgjczy2dmf8a",
+    "name": "Band 3 (Pocket Monsters SPECIAL)",
+    "author": "Hidenori Kusaka",
+    "description": null,
+    "genre": "comic",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20002dgjczy2dmf8a.jpg",
+    "publishedAt": "2001-08-31T22:00:00.000Z",
+    "isbn": "9783898851954",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20003dgjcoof80gni",
+    "name": "Léon und Louise",
+    "author": "Alex Capus",
+    "description": "In einer Zeit, die überschattet wird von den grausamen Ereignissen im Ersten Weltkrieg, ist Liebe oft das Einzige, was den Menschen Hoffnung auf Besserung schenkt. Als Léon Louise auf ihrem Fahrrad sieht, ist es für ihn Liebe auf den ersten Blick, doch ihnen sind nur 24 gemeinsame Stunden vergönnt, bis ein Bombenangriff die beiden voneinander trennt. Sowohl Léon als auch Louise sind davon überzeugt, dass der andere tot ist - bis sie sich zehn Jahre später in Paris wieder begegnen. Der gebürtige Franzose Alex Capus versteht sein Handwerk und entführt uns mit seinen historischen Romanen in die Vergangenheit.",
+    "genre": "romance",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20003dgjcoof80gni.jpg",
+    "publishedAt": "2011-02-07T00:00:00.000Z",
+    "isbn": "9783446236301",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20004dgjcgvl4nr3u",
+    "name": "Harry Potter und der Stein der Weisen",
+    "author": "J.K. Rowling",
+    "description": "„Harry Potter und der Stein der Weisen“ ist der erste Band der Harry Potter Reihe. Es handelt von einem Jungen der bei seiner Tante, Onkel und Cousin auf gewachsen ist. Als Harry 11 Jahre alt wurde erfuhr er, dass er von Zauberern abstammt und selbst einer ist. Er soll nach Hogwarts (einer Zauberer Schule) gehen.",
+    "genre": "fantasy",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20004dgjcgvl4nr3u.jpg",
+    "publishedAt": "1997-07-25T22:00:00.000Z",
+    "isbn": "3551551677",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20005dgjcmd39zgdp",
+    "name": "Pokémon Adventures, Band 1",
+    "author": "Hidenori Kusaka",
+    "description": null,
+    "genre": "comic",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20005dgjcmd39zgdp.png",
+    "publishedAt": "2001-02-28T23:00:00.000Z",
+    "isbn": "9783898851954",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20006dgjcqe6txnle",
+    "name": "Wenn du mich siehst",
+    "author": "Nicholas Sparks",
+    "description": "Nicholas Sparks ist aus den Bücherregalen nicht mehr wegzudenken und seit seine Romane regelmäßig verfilmt werden, ist er weltweit berühmt. \"Wenn du mich siehst\" ist seine neuste Erscheinung und wieder einmal weiß er ganz genau, was Frauenherzen berührt und uns zum dahinschmelzen bringt. Als die Rechtsanwältin Maria eine Reifenpanne hat, ist ihre einzige Hilfe ein bedrohlich wirkender Kerl, muskelbepackt und mit blau geschwollenem Gesicht. Der MMA-Kämpfer Colin ist gerade auf Bewährung und kann sich keinen Fehler erlauben, doch die aufkeimende Liebe zwischen Maria und ihm bringt beide immer mehr in Schwierigkeiten.",
+    "genre": "romance",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20006dgjcqe6txnle.jpg",
+    "publishedAt": "2016-03-08T00:00:00.000Z",
+    "isbn": "9783453268760",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20007dgjcr0fsrxu3",
+    "name": "Beautiful Disaster",
+    "author": "Jamie McGuire",
+    "description": "Im ersten Band der Maddox-Brüder Reihe \"Beautiful Disaster\" geht es um die beiden Studenten Abby und Travis, die sich aufgrund einer verlorenen Wette näher kommen. Doch Abby sträubt sich vehement gegen ihre Gefühle für den Bad Boy und wendet sich dem Traum aller Schwiegermütter, Parker, zu. Wird Travis es schaffen, Abbys Herz zu erobern oder wird ihr Geheimnis den beiden im Wege stehen? Das schöne Cover verspricht nicht zu viel, denn Jamie McGuire gelingt es mit diesem Roman eine wunderbare Liebesgeschichte mit dunklen Geheimnissen zu erzählen.",
+    "genre": "romance",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20007dgjcr0fsrxu3.jpg",
+    "publishedAt": "2013-04-16T00:00:00.000Z",
+    "isbn": "9783492303347",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20008dgjc5orze0gf",
+    "name": "Harry Potter und der Gefangene von Askaban",
+    "author": "J.K. Rowling",
+    "description": "Zu Beginn des dritten Schuljahrs in Hogwarts erfährt Harry Potter, warum er straffrei ausging: Sirius Black, der Gefangene von Askaban, ist entwichen, und es wird befürchtet, dass er auf der Suche nach Harry Potter ist. Deshalb bewachen die grausigen Dementoren aus Askaban das Internat.",
+    "genre": "fantasy",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104274/book-rental-app/books/cl80pcbh20008dgjc5orze0gf.jpg",
+    "publishedAt": "2004-06-02T22:00:00.000Z",
+    "isbn": "3551551693",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20010dgjccn5fxs87",
+    "name": "Die zwei Leben der Alice Pendelbury",
+    "author": "Marc Levy",
+    "description": "Alice Pendelbury wird von einer Hellseherin prophezeit, dass gerade der wichtigste Mensch in ihrem zukünftigen Leben hinter ihr vorbeigegangen ist. Die Suche nach ihm gestaltet sich jedoch schwierig, muss Alice doch erst sechs bestimmten Personen begegnen, bis sie das neue Leben, das angeblich auf sie wartet, beginnen kann. Die junge Engländerin begibt sich kurzerhand mit ihrem Nachbarn auf eine spannende Reise. Marc Levys' erster Roman \"Solange du da bist\" wurde bereits ein Riesenerfolg und der Autor beweist immer wieder aufs Neue, dass er ein Händchen für wunderbare Liebesromane hat.",
+    "genre": "romance",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20010dgjccn5fxs87.jpg",
+    "publishedAt": "2013-05-28T00:00:00.000Z",
+    "isbn": "9783764504441",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20017dgjclg6w346m",
+    "name": "Für immer vielleicht",
+    "author": "Cecelia Ahern",
+    "description": "Rosie und Alex sind beste Freunde seit Kindertagen und im Laufe ihrer gemeinsamen Zeit entwickeln sich auf beiden Seiten Gefühle. Das Schicksal legt den beiden jedoch immer wieder Steine in den Weg, sei es ein Umzug oder ein unerwartetes Kind. \"Für immer vielleicht\" ist ein Roman, der den Leser mitfiebern lässt, teilweise traurig über die Gefühllosigkeit des Schicksals macht, aber gleichzeitig auch sehr hoffnungsvoll ist. Wer die Bücher von Cecelia Ahern mag, dem wird die Geschichte, die lediglich mittels Briefen, E-Mails und Chat-Logs erzählt wird, sehr gut gefallen.",
+    "genre": "romance",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20017dgjclg6w346m.jpg",
+    "publishedAt": "2006-03-01T00:00:00.000Z",
+    "isbn": "9783828978362",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20018dgjczgbd6bf7",
+    "name": "Band 2 (Pocket Monsters SPECIAL)",
+    "author": "Hidenori Kusaka",
+    "description": null,
+    "genre": "comic",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20018dgjczgbd6bf7.png",
+    "publishedAt": "2001-05-31T22:00:00.000Z",
+    "isbn": "9783898851954",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20024dgjcyfj67qe9",
+    "name": "Babylon Berlin - Moabit",
+    "author": "Volker Kutscher, Kat Menschik",
+    "description": null,
+    "genre": "crime",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20024dgjcyfj67qe9.jpg",
+    "publishedAt": "2017-08-04T22:00:00.000Z",
+    "isbn": "9783869711553",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20025dgjcsob7hjar",
+    "name": "Babylon Berlin - Der stumme Tod",
+    "author": "Volker Kutscher",
+    "description": null,
+    "genre": "crime",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20025dgjcsob7hjar.jpg",
+    "publishedAt": "2020-05-03T22:00:00.000Z",
+    "isbn": "9783869711553",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20026dgjc8dwnfu8h",
+    "name": "Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "description": "Sherlock Holmes ist der Inbegriff des scharfsinnigen Gentleman-Detektivs: Wenn er mit seinem Freund Dr. Watson ein wenig kombiniert, ist selbst der kniffligste Fall schon so gut wie gelöst. Die Welt des Sherlock Holmes ist eine Sammlung von Geschichten ganz unterschiedlicher Länge, an denen Arthur Conan Doyle zeitlebens geschrieben hat. Vier seiner Fälle wuchsen zu Romanform an, sie versammelt dieser zum Schmökern einladende Band: 'Eine Studie in Scharlachrot', 'Das Zeichen der Vier', 'Der Hund der Baskervilles' und 'Das Tal des Grauens'.",
+    "genre": "crime",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20026dgjc8dwnfu8h.jpg",
+    "publishedAt": "2013-07-30T22:00:00.000Z",
+    "isbn": "9783730600306",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20027dgjc2hph052f",
+    "name": "Die drei ??? Das Gespensterschloss ",
+    "author": "Christopher Tauber",
+    "description": "Ein ganz besonderer Leckerbissen für alle Liebhaber der Klassiker-Ära: \"Die drei ??? und das Gespensterschloss\", einer der All-Time-Favourites der Kultreihe, entfaltet als Graphic Novel einen unwiderstehlichen Reiz. Ines Korth übersetzt die spannende Story um ein Schloss, in dem es spukt, und einen eigenartigen Stummfilmstar in atmosphärisch starke Bilder – ganz im Retro-Stil der 1960er-Jahre. Ein Muss für Fans!",
+    "genre": "action",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104274/book-rental-app/books/cl80pcbh20027dgjc2hph052f.png",
+    "publishedAt": "2022-01-01T00:00:00.000Z",
+    "isbn": "783440170915",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20028dgjc5ue5qoq7",
+    "name": "Die drei ??? Der weiße Leopard",
+    "author": "Kosmos",
+    "description": "Kein Einbrecher dieser Welt kann den „weißen Leopard\" stehlen. Ein unüberwindbares Sicherheitssystem sollte den edlen Schatz schützen. Doch die Schale aus dem 17. Jahrhundert ist verschwunden. Ein brisanter Fall für die drei ???, denn auf der Schale liegt ein Fluch der Samurai. Wer den „weißen Leopard“ nicht ehrt, wird mit dem Tod bestraft – können Justus, Peter und Bob der tödlichen Rache entkommen?",
+    "genre": "action",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20028dgjc5ue5qoq7.jpg",
+    "publishedAt": "2022-01-01T00:00:00.000Z",
+    "isbn": "9783440175286",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20029dgjczu7j1vbr",
+    "name": "Sherlock Holmes - Das Zeichen der Vier",
+    "author": "Arthur Conan Doyle",
+    "description": "Sherlock Holmes und Dr. Watson sollen Miss Mary Morstan bei der Suche nach ihrem verschollenen Vater helfen. Dieser war Offizier in Indien und verschwand bei seiner Rückkehr nach England. Ein anonymer Brief bringt sie auf die Spur von Thaddeus Sholto, dessen Vater mit dem Gesuchten in derselben Kompanie gedient hat. Thaddeus berichtet von einem Schatz, den die beiden Männer mit aus Indien brachten, der aber seinem Bruder das Leben kostete und anschließend verschwand.",
+    "genre": "crime",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20029dgjczu7j1vbr.jpg",
+    "publishedAt": "1890-01-31T23:06:32.000Z",
+    "isbn": "9783596035663",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  },
+  {
+    "bookId": "cl80pcbh20030dgjcnc0x9j7c",
+    "name": "Gregs Tagebuch 1 - Von Idioten umzingelt",
+    "author": "Jeff Kinney",
+    "description": null,
+    "genre": "comic",
+    "cover": "https://res.cloudinary.com/mxgnus/image/upload/v1663104275/book-rental-app/books/cl80pcbh20030dgjcnc0x9j7c.jpg",
+    "publishedAt": "2011-01-01T00:00:00.000Z",
+    "isbn": "9783843200059",
+    "createdAt": "2022-09-13T21:24:29.846Z"
+  }
+]

@@ -1,6 +1,7 @@
 import { GENRE_DISPLAYNAMES } from '@book-rental-app/shared/constants';
 import { useNotifications } from '@book-rental-app/shared/stores';
 import {
+	AdminBookCoverUpdateApiResponse,
 	AdminCreateBookApiRequest,
 	AdminUpdateBookApiRequest,
 } from '@book-rental-app/shared/types';
@@ -11,12 +12,13 @@ import {
 	SubHeadline,
 } from '@book-rental-app/shared/ui-components';
 import { Book, BookGenre } from '@prisma/client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import {
 	updateBook as updateBookApi,
 	createBook as createBookApi,
 	deleteBook as deleteBookApi,
+	apiClient,
 } from '@book-rental-app/shared/utils';
 import { useRouter } from 'next/router';
 
@@ -38,9 +40,20 @@ function EditBook({ book: initalBook, mode }: EditBookProps) {
 	const [book, setBook] = useState<Partial<Book>>({
 		...initalBook,
 	});
+	const [newCoverImage, setNewCoverImage] = useState<File | null>(null);
 	const { showErrorNotification, showSuccessNotification } =
 		useNotifications();
 	const router = useRouter();
+
+	useEffect(() => {
+		if (mode === 'create') {
+			setBook((book) => ({
+				...book,
+				publishedAt: new Date(),
+			}));
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	async function updateBook() {
 		if (mode !== 'edit') return;
@@ -58,19 +71,37 @@ function EditBook({ book: initalBook, mode }: EditBookProps) {
 
 		const success = await updateBookApi(initalBook.bookId, payload);
 
-		if (success) {
-			showSuccessNotification('Das Buch wurde erfolgreich aktualisiert.');
-		} else {
-			showErrorNotification(
+		if (!success) {
+			return showErrorNotification(
 				'Es ist ein Fehler aufgetreten. Das Buch konnte nicht aktualisiert werden.'
 			);
 		}
+
+		if (newCoverImage !== null) {
+			const newCover = await changeBookCover(
+				initalBook.bookId,
+				newCoverImage
+			);
+
+			if (!newCover) {
+				return showErrorNotification(
+					'Es ist ein Fehler aufgetreten. Das Buch Cover konnte nicht aktualisiert werden.'
+				);
+			}
+
+			setBook((book) => ({
+				...book,
+				cover: newCover,
+			}));
+
+			setNewCoverImage(null);
+		}
+
+		showSuccessNotification('Das Buch wurde erfolgreich aktualisiert.');
 	}
 
 	async function createBook() {
 		if (mode !== 'create') return;
-
-		console.log(book);
 
 		if (
 			!book.name ||
@@ -78,7 +109,8 @@ function EditBook({ book: initalBook, mode }: EditBookProps) {
 			!book.genre ||
 			!book.isbn ||
 			!book.publishedAt ||
-			!book.cover
+			!newCoverImage ||
+			book.genre === ('default' as any)
 		) {
 			return showErrorNotification('Bitte fülle alle Felder aus.');
 		}
@@ -86,23 +118,30 @@ function EditBook({ book: initalBook, mode }: EditBookProps) {
 		const payload: AdminCreateBookApiRequest = {
 			author: book.author,
 			genre: book.genre,
-			cover: book.cover,
 			description: book.description || null,
 			isbn: book.isbn,
 			name: book.name,
 			publishedAt: book.publishedAt,
 		};
 
-		const success = await createBookApi(payload);
+		const newBookId = await createBookApi(payload);
 
-		if (success) {
-			showSuccessNotification('Das Buch wurde erfolgreich erstellt.');
-			router.push('/admin/books');
-		} else {
-			showErrorNotification(
+		if (!newBookId) {
+			return showErrorNotification(
 				'Es ist ein Fehler aufgetreten. Das Buch konnte nicht erstellt werden.'
 			);
 		}
+
+		const newCover = await changeBookCover(newBookId, newCoverImage);
+
+		if (!newCover) {
+			return showErrorNotification(
+				'Es ist ein Fehler aufgetreten. Das Buch Cover konnte nicht aktualisiert werden.'
+			);
+		}
+
+		showSuccessNotification('Das Buch wurde erfolgreich erstellt.');
+		router.push('/admin/books');
 	}
 
 	async function deleteBook() {
@@ -125,6 +164,27 @@ function EditBook({ book: initalBook, mode }: EditBookProps) {
 			showErrorNotification(
 				'Es ist ein Fehler aufgetreten. Das Buch konnte nicht gelöscht werden.'
 			);
+		}
+	}
+
+	async function changeBookCover(bookId: string, cover: File) {
+		try {
+			const formData = new FormData();
+			formData.append('cover', cover);
+
+			const response = await apiClient.post<AdminBookCoverUpdateApiResponse>(
+				`/admin/books/${bookId}/cover`,
+				formData,
+				{
+					headers: {
+						'Content-Type': 'multipart/form-data',
+					},
+				}
+			);
+
+			return response.data.coverUrl;
+		} catch (err) {
+			return null;
 		}
 	}
 
@@ -175,14 +235,29 @@ function EditBook({ book: initalBook, mode }: EditBookProps) {
 					</EditorItem>
 					<EditorItem>
 						<InputWrapper>
-							<InputLabel required>Buch Cover URL</InputLabel>
-							<Input
-								value={book.cover}
-								type="text"
-								onChange={(e) =>
-									e.target.value.length <= 100 &&
-									setBook({ ...book, cover: e.target.value })
-								}
+							<InputLabel required={mode === 'create'}>
+								Buch Cover
+							</InputLabel>
+							<FileInput
+								value={undefined}
+								type="file"
+								accept="image/png, image/jpeg, image/jpg"
+								onChange={async (e) => {
+									const file = e.target.files?.[0];
+									if (!file) return setNewCoverImage(null);
+									const fileSizeInKB = Math.round(file.size / 1024);
+
+									if (!file.type.includes('image'))
+										return setNewCoverImage(null);
+									else if (fileSizeInKB > 2048) {
+										showErrorNotification(
+											'Das Ausgewählte Bild ist zu groß. Bitte wähle ein Bild mit einer Größe von unter 2MB aus.'
+										);
+										return setNewCoverImage(null);
+									}
+
+									setNewCoverImage(file);
+								}}
 							/>
 						</InputWrapper>
 					</EditorItem>
@@ -204,9 +279,8 @@ function EditBook({ book: initalBook, mode }: EditBookProps) {
 							<InputLabel required>Buch Erscheinungsjahr</InputLabel>
 							<Input
 								value={
-									book.publishedAt
-										? new Date(book.publishedAt).getFullYear()
-										: new Date().getFullYear()
+									new Date(book.publishedAt).getFullYear() ||
+									new Date().getFullYear()
 								}
 								type="number"
 								inputMode="numeric"
@@ -237,13 +311,18 @@ function EditBook({ book: initalBook, mode }: EditBookProps) {
 										genre: e.target.value as BookGenre,
 									});
 								}}
-								defaultValue={BookGenre.comic}
+								defaultValue={book.genre || 'default'}
 							>
-								{Object.values(BookGenre).map((genre) => (
-									<option key={genre} value={genre}>
-										{GENRE_DISPLAYNAMES[genre as BookGenre].long}
+								<>
+									<option disabled value="default">
+										--- Bitte auswählen ---
 									</option>
-								))}
+									{Object.values(BookGenre).map((genre) => (
+										<option key={genre} value={genre}>
+											{GENRE_DISPLAYNAMES[genre as BookGenre].long}
+										</option>
+									))}
+								</>
 							</Select>
 						</InputWrapper>
 					</EditorItem>
@@ -340,6 +419,11 @@ export const Input = styled.input`
 	padding: 2.5px 10px;
 	border-radius: 10px;
 	background-color: ${({ theme }) => theme.colors.grey.light};
+`;
+
+export const FileInput = styled(Input)`
+	height: unset;
+	padding: 12.5px 10px;
 `;
 
 const Textarea = styled.textarea`

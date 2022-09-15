@@ -1,6 +1,7 @@
 import {
 	AdminBook,
 	AdminBookApiResponse,
+	AdminBookCoverUpdateApiResponse,
 	AdminBookCreateApiResponse,
 	AdminBooksApiResponse,
 	AdminBookUpdateApiResponse,
@@ -18,6 +19,9 @@ import { normalizeUser } from '../../helpers/user';
 import { requireAdminAuthMiddleware } from '../../middleware/auth';
 import { withErrorHandler } from '../../middleware/error';
 import prisma from '../../prisma';
+import formidable from 'formidable';
+import { v2 as cloudinary } from 'cloudinary';
+import fs from 'fs/promises';
 
 const router = Router();
 
@@ -240,8 +244,13 @@ router.delete(
 router.post(
 	'/books',
 	withErrorHandler(async (req, res) => {
-		const { name, author, cover, description, genre, isbn, publishedAt } =
+		const { name, author, description, genre, isbn, publishedAt, cover } =
 			req.body as AdminCreateBookApiRequest;
+
+		if (!name || !author || !genre || !isbn || !publishedAt)
+			return badRequest('Missing required fields').send(res);
+		else if (cover && !cover.startsWith('https://res.cloudinary.com'))
+			return badRequest('Invalid cover url').send(res);
 
 		const existingBook = await prisma.book.findFirst({
 			where: {
@@ -260,7 +269,7 @@ router.post(
 			data: {
 				name,
 				author,
-				cover,
+				cover: cover || '',
 				description,
 				genre,
 				isbn,
@@ -295,6 +304,10 @@ router.put(
 
 		if (!book) return badRequest('Book not found').send(res);
 
+		if (cover && !cover.startsWith('https://res.cloudinary.com')) {
+			return badRequest('Cover must be an Cloudinary URL').send(res);
+		}
+
 		await prisma.book.update({
 			where: {
 				bookId,
@@ -315,6 +328,84 @@ router.put(
 		const response: AdminBookUpdateApiResponse = {
 			success: true,
 			bookId,
+		};
+
+		return res.json(response);
+	})
+);
+
+// @route POST api/admin/books/:bookId/cover
+router.post(
+	'/books/:bookId/cover',
+	withErrorHandler(async (req, res) => {
+		const form = new formidable.IncomingForm();
+		const parsedForm = await new Promise<{
+			fields: formidable.Fields;
+			files: any;
+		}>((resolve, reject) => {
+			form.parse(req, (err, fields, files) => {
+				if (err) {
+					return reject(err);
+				}
+
+				const obj = {
+					fields,
+					files,
+				};
+
+				return resolve(obj);
+			});
+		});
+
+		const cover = parsedForm.files.cover;
+
+		if (!cover || Array.isArray(cover)) {
+			return badRequest('Cover is required').send(res);
+		}
+
+		const sizeInKB = Math.round(cover.size / 1024);
+
+		if (sizeInKB > 2048) {
+			return badRequest('Cover is too large').send(res);
+		}
+
+		const { bookId } = req.params;
+
+		const book = await prisma.book.findUnique({
+			where: {
+				bookId,
+			},
+		});
+
+		if (!book) {
+			return badRequest('Book not found').send(res);
+		}
+
+		const uploadedImage = await cloudinary.uploader.upload(
+			cover._writeStream.path,
+			{
+				folder: 'book-rental-app/books',
+				unique_filename: true,
+				use_filename: true,
+				public_id: bookId,
+			}
+		);
+
+		const newCoverUrl = uploadedImage.url.replace('http://', 'https://');
+
+		await fs.unlink(cover._writeStream.path);
+
+		await prisma.book.update({
+			where: {
+				bookId,
+			},
+			data: {
+				cover: newCoverUrl,
+			},
+		});
+
+		const response: AdminBookCoverUpdateApiResponse = {
+			coverUrl: newCoverUrl,
 		};
 
 		return res.json(response);

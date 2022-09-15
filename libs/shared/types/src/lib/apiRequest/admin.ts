@@ -8,5 +8,7 @@ export type AdminUpdateBookApiRequest = ApiRequest<
 >;
 
 export type AdminCreateBookApiRequest = ApiRequest<
-	Omit<Omit<Book, 'bookId'>, 'createdAt'>
+	Omit<Omit<Omit<Book, 'bookId'>, 'createdAt'>, 'cover'> & {
+		cover?: string;
+	}
 >;

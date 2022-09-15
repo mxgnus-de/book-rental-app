@@ -151,7 +151,7 @@ export async function createBook(
 				headers,
 			}
 		);
-		return response.data.success;
+		return response.data.bookId;
 	} catch (error) {
 		return false;
 	}

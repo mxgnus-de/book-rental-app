@@ -15,6 +15,7 @@ import {
 import ApiError from './app/helpers/error';
 import mainRouter from './app/routes/routing';
 import { startMailWorker } from './app/email';
+import { v2 as cloudinary } from 'cloudinary';
 
 prepare().then(main);
 
@@ -27,6 +28,8 @@ async function prepare() {
 
 	await initializePrisma();
 	startMailWorker();
+
+	cloudinary.config();
 
 	fileLogger.debug(`Backend-api prepared in ${Date.now() - startTime}ms`);
 }
@@ -68,7 +71,8 @@ async function main() {
 	app.use(errorHandlerMiddleware);
 
 	app.listen(PORT, () => {
-		fileLogger.info(
+		fileLogger.log(
+			'info',
 			`Backend-api started in ${
 				Date.now() - startTime
 			}ms on port ${PORT}. Environment: ${

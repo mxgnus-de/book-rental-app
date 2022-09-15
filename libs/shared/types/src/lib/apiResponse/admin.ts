@@ -36,3 +36,7 @@ export type AdminBookCreateApiResponse = ApiResponse<{
 	success: boolean;
 	bookId: string;
 }>;
+
+export type AdminBookCoverUpdateApiResponse = ApiResponse<{
+	coverUrl: string;
+}>;
