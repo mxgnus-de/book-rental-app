@@ -7,8 +7,8 @@ interface MetaProps {
 }
 
 export function Meta({ title, description, serviceUrl }: MetaProps) {
-	const defaultDescription = 'Book Rental App';
-	const defaultTitle = 'Book Rental App • ';
+	const defaultDescription = 'MMMB - Bibliothek';
+	const defaultTitle = 'MMMB Bibliothek • ';
 	const themeColor = '#2FB4FF';
 
 	const titleWithDefault = `${defaultTitle}${title}`;

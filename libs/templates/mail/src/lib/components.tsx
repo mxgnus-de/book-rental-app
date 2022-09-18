@@ -39,7 +39,7 @@ export function Header() {
 					}}
 					href={`${process.env.NEXT_PUBLIC_SERVICE_URL}`}
 				>
-					Book-Rental App
+					MMMB Bibliothek
 				</A>
 			</HeaderWrapper>
 			<Hyphen />
